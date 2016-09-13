@@ -18,7 +18,7 @@ CREATE TABLE `dashboard_graph` (
   `falcon_tags` varchar(512) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `idx_sid` (`screen_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4626;
+) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS `dashboard_screen`;
 CREATE TABLE `dashboard_screen` (
@@ -28,7 +28,7 @@ CREATE TABLE `dashboard_screen` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_pid` (`pid`)
-) ENGINE=InnoDB AUTO_INCREMENT=952;
+) ENGINE=InnoDB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS `tmp_graph`;
 CREATE TABLE `tmp_graph` (
@@ -39,4 +39,11 @@ CREATE TABLE `tmp_graph` (
   `time_` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_ck` (`ck`)
-) ENGINE=InnoDB AUTO_INCREMENT=365189;
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+
+DROP TABLE IF EXISTS `endpoint_alias`;
+create table endpoint_alias (
+	id int primary key auto_increment,
+	endpoint varchar(255) not null unique,
+	alias varchar(255)
+) ENGINE=InnoDB AUTO_INCREMENT=1;;
